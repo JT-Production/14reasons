@@ -44,7 +44,7 @@ export default function LoveScroll() {
 
   return (
     <div className="h-screen w-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth">
-      {/* YouTube Music Embed (Hidden) */}
+      {/* YouTube Music Embed (Hidden)
       <div style={{ opacity: '0' }}>
         <iframe
           width="0"
@@ -55,12 +55,22 @@ export default function LoveScroll() {
           allow="autoplay"
           allowFullScreen
         ></iframe>
-      </div>
+      </div> */}
+<audio autoPlay loop controls playsInline hidden >
+    <source src="/residuals.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+</audio>
 
       {/* Cover Page */}
       <div className="h-screen w-full flex items-center justify-center flex-col bg-pink-100 snap-start">
         <h1 className="text-4xl font-bold text-center mb-4">14 Reasons I Love You, Aretha</h1>
         <p className="text-lg text-center max-w-md">Scroll down slowly and feel my heart in every word.</p>
+        <button 
+            onClick={() => document.querySelector('audio')?.play()} 
+            className="mt-4 px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors"
+        >
+            Play Our Song ♪
+        </button>
       </div>
 
       {/* Love Reasons */}
